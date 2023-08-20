@@ -25,6 +25,25 @@ int main(void)
 	len = _printf("print: %s \n", NULL);
 	len2 = printf("print: %s \n", NULL);
 	printf("Length:[%i, %i]\n", len, len2);
-	printf("_____________________________________\n")
+	printf("_____________________________________\n");
+
+
+        /* testing %s"    0*/
+	len = _printf("print: %i \n", 0);
+	len2 = printf("print: %i \n", 0);
+	printf("Length:[%i, %i]\n", len, len2);
+        /* testing %i"    pos*/
+	len = _printf("print: %i \n", 10500);
+	len2 = printf("print: %i \n", 10500);
+	printf("Length:[%i, %i]\n", len, len2);
+	/* testing %s"    neg*/
+	len = _printf("print: %i \n", -10500);
+	len2 = printf("print: %i \n", -10500);
+	printf("Length:[%i, %i]\n", len, len2);
+
+	printf("_____________________________________\n");
+
+
+
 	return (0);
 }
