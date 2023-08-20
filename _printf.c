@@ -29,6 +29,9 @@ int _printf(const char *format, ...)
 			case 's':
 				printed_chars += print_string(args);
 				break;
+                        case 'i':
+                                printed_chars += print_int(args);
+                                break;
 			case '%':
 				write(1, "%", 1);
 				printed_chars++;
