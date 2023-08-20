@@ -1,6 +1,4 @@
 #include "main.h"
-
-
 /**
  * main - Entry point
  *
@@ -12,6 +10,11 @@ int main(void)
     int len2;
     unsigned int ui;
     void *addr;
+
+    /* testing %c" */
+    len = _printf("this is a char: %c \n" , 'a');
+    len2 = printf("this is a char: %c \n" , 'a');
+    printf("Length:[%i, %i]\n", len, len2);
 
     len = _printf("Let's try to printf a simple sentence.\n");
     len2 = printf("Let's try to printf a simple sentence.\n");
