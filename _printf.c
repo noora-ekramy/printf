@@ -1,52 +1,56 @@
 #include "main.h"
+#include <stdarg.h>
+
+#define buffer 1024
 
 /**
- * _printf - prints the input according to a format
- * @format : the formating string
+ * _printf - print any thing
  *
- * Return : number of printed chars
- */
+ * @format: the string to print
+ *
+ * Return: number of printed char
+*/
+
+
 int _printf(const char *format, ...)
 {
-	int printed_chars =0;
 	va_list args;
-	va_start(args, format);
+	int count = 0, i = 0;
 
-    if (format == NULL)
-    {
-        return(-1);
-    }
-	while (*format)
+	va_start(args, format);
+	if (format == NULL)
+		format = "";
+	for (; format[i] != 0; i++)
 	{
-		if (*format == '%')
+		if (format[i] == '%')
 		{
-			format++;
-		       	switch (*format)
+			i++;
+			if (format[i] == 'c')
+				count += print_char(va_arg(args, char));
+			else if (format[i] == 's')
+				count += print_string(va_arg(args, char *));
+			else if (format[i] == '%')
+				count += print_percent(void);
+			else if (format[i] == 'i' || format[i] == 'd')
+				count += print_int(va_arg(args, int));
+			else if (format[i] == 'b')
+				count += print_binary(va_arg(args, int));
+			else if (format[i] == 'u')
+				count += print_unsigned(va_arg(args, int));
+			else if (format[i] == 'o')
+				count += print_octal(va_arg(args, int));
+			else if (format[i] == 'x')
+				count += print_hex(va_arg(args, int));
+			else if (format[i] == 'X')
+				count += print_capital_hex(va_arg(args, int));
+
+			else
 			{
-				case 'c':
-					printed_chars = printed_chars + print_char(args);
-					break;
-				case 's':
-				        printed_chars = printed_chars+ print_string(args);
-					break;
-				case '%':
-				       	write(1, "%", 1);
-					printed_chars++;
-					break;
-				default:
-					write(1, "%", 1);
-					write(1, format, 1);
-					printed_chars += 2;
-					break;
+				i--;
+				count += print_percent(void);
 			}
 		}
-		else
-		{
-			write(1, format, 1);
-		       	printed_chars++;
-		}
-		format++;
+		va_end(args);
+		return (++count);
 	}
-	va_end(args);
-	return(printed_chars);
 }
