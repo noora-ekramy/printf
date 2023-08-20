@@ -11,6 +11,10 @@ int print_string(va_list arg)
 
         str = va_arg(arg, char *);
         len = 0;
+        if (str == NULL )
+        {
+                str = "(null)";
+        }
         while (str[len])
         {
                 write(1, &str[len], 1);
