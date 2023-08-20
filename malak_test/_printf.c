@@ -1,4 +1,7 @@
 #include "main.h"
+#include <stdarg.h>
+
+#define buffer 1024
 
 /**
  * _printf - print any thing
@@ -32,6 +35,14 @@ int _printf(const char *format, ...)
 				count += print_int(va_arg(args, int));
 			else if (format[i] == 'b')
 				count += print_binary(va_arg(args, int));
+			else if (format[i] == 'u')
+				count += print_unsigned(va_arg(args, int));
+			else if (format[i] == 'o')
+				count += print_octal(va_arg(args, int));
+			else if (format[i] == 'x')
+				count += print_hex(va_arg(args, int));
+			else if (format[i] == 'X')
+				count += print_capital_hex(va_arg(args, int));
 
 			else
 			{
@@ -40,6 +51,6 @@ int _printf(const char *format, ...)
 			}
 		}
 		va_end(args);
-		return (count++);
+		return (++count);
 	}
 }

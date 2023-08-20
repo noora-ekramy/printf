@@ -10,5 +10,9 @@ int print_percent(void);
 int print_int(int i);
 int print_binary(int i);
 void print_unsigned_number(int n);
+int print_unsigned(int i);
+int print_octal(int i);
+int print_hex(int i);
+int print_capital_hex(int i);
 
 #endif
