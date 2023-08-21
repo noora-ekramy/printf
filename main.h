@@ -7,6 +7,19 @@
 #include <stdio.h>
 #include <unistd.h>
 
+/**
+ * struct format - match specifiers for _printf
+ * @sp: type char pointer of the specifier
+ * @fun: type pointer to function for  specifier
+ *
+ */
+
+typedef struct format
+{
+	char *sp;
+	int (*fun)();
+} specifier_match;
+
 int _printf(const char *format, ...);
 int print_char(va_list arg);
 int print_string(va_list arg);
