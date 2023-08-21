@@ -5,7 +5,7 @@
  * @args: argument
  * Return: the printed_len
  */
-int matching_format(char *format , va_list args)
+int matching_format(const char *format , va_list args)
 {
 	if(*format == 'c')
 		return print_char(args);
