@@ -31,7 +31,7 @@ int _printf(const char *format, ...)
 			else if (format[i] == 's')
 				count += print_string(va_arg(args, char *));
 			else if (format[i] == '%')
-				count += print_percent(void);
+				count += print_percent();
 			else if (format[i] == 'i' || format[i] == 'd')
 				count += print_int(va_arg(args, int));
 			else if (format[i] == 'b')
@@ -48,10 +48,10 @@ int _printf(const char *format, ...)
 			else
 			{
 				i--;
-				count += print_percent(void);
+				count += print_percent();
 			}
 		}
 	}
 	va_end(args);
-	return (++count);
+	return (count);
 }
