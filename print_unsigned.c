@@ -8,9 +8,9 @@
  * @i: the number to print octal
 */
 
-int print_unsigned(int i)
+int print_unsigned(unsigned int i)
 {
-	int count = 0;
+	unsigned int count = 0;
 
 	print_unsigned_number(i);
 	while (i > 0)

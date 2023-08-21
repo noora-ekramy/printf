@@ -8,7 +8,7 @@
  * @n: the number to print
 */
 
-void print_unsigned_number(int n)
+void print_unsigned_number(unsigned int n)
 {
 	unsigned int num = n;
 
