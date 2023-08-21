@@ -34,18 +34,6 @@ int _printf(const char *format, ...)
 				count += print_string(va_arg(args, char *));
 			else if (format[i] == '%')
 				count += print_percent();
-			else if (format[i] == 'i' || format[i] == 'd')
-				count += print_int(va_arg(args, int));
-			else if (format[i] == 'b')
-				count += print_binary(va_arg(args, unsigned int));
-			else if (format[i] == 'u')
-				count += print_unsigned(va_arg(args, unsigned int));
-			else if (format[i] == 'o')
-				count += print_octal(va_arg(args, int));
-			else if (format[i] == 'x')
-				count += print_hex(va_arg(args, int));
-			else if (format[i] == 'X')
-				count += print_capital_hex(va_arg(args, int));
 
 			else
 			{
