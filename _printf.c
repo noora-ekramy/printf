@@ -10,7 +10,7 @@ int _printf(const char *format, ...)
 {
 	int printed_chars = 0;
 	va_list args;
-
+	
 	va_start(args, format);
 	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 	{
@@ -30,6 +30,9 @@ int _printf(const char *format, ...)
 				printed_chars += print_string(args);
 				break;
                         case 'i':
+                                printed_chars += print_int(args);
+                                break;
+                        case 'd':
                                 printed_chars += print_int(args);
                                 break;
 			case '%':
