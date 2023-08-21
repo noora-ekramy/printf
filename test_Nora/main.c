@@ -8,9 +8,6 @@ int main(void)
 {
 	int len;
 	int len2;
-	unsigned int ui;
-	void *addr;
-
 	/* testing %c" */
 	len = _printf("this is a char: %c \n", 'a');
 	len2 = printf("this is a char: %c \n", 'a');
