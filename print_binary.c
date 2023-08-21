@@ -8,9 +8,9 @@
  * @i: the int to print its binary
 */
 
-int print_binary(int i)
+int print_binary(unsigned int i)
 {
-	int count = 0, binary = 0, tens = 1;
+	unsigned int count = 0, binary = 0, tens = 1;
 
 	while (i > 0)
 	{

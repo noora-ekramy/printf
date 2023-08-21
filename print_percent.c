@@ -6,7 +6,7 @@
  * Return: always 1
 */
 
-int print_percent(int i)
+int print_percent()
 {
 	_putchar('%');
 	return (1);
