@@ -2,7 +2,7 @@
 #include <stdarg.h>
 #include <stdio.h>
 
-#define buffer 1024
+//#define buffer 1024
 
 /**
  * _printf - print any thing
