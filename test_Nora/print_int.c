@@ -29,6 +29,7 @@ int print_int(va_list arg)
 /**
  * print_number - prints integer
  * @num: number
+ * @len: integer length
  * Return: nothing
  */
 int print_number(int num ,int len)
