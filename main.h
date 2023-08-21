@@ -16,8 +16,8 @@ int print_int(int i);
 int print_binary(int i);
 void print_unsigned_number(unsigned int n);
 int print_unsigned(unsigned int i);
-//int print_octal(int i);
-//int print_hex(int i);
-//int print_capital_hex(int i);
+int print_octal(int i);
+int print_hex(int i);
+int print_capital_hex(int i);
 
 #endif

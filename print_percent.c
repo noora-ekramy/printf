@@ -1,5 +1,4 @@
 #include "main.h"
-#include "_putchar.c"
 
 /**
  * print-percent - print a percent sign

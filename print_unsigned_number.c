@@ -1,5 +1,4 @@
 #include "main.h"
-#include "_putchar.c"
 
 /**
  * print_unsigned_number - print positive number
