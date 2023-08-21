@@ -4,41 +4,33 @@
  * @arg: argument to print
  * Return: number of characters printed
  */
-int print_int(va_list args)
-{
-	int n = va_arg(args, int);
-	int num, last = n % 10, digit, exp = 1;
-	int  i = 1;
+int print_int(va_list args) {
+    int num = va_arg(args, int);
+    int num_copy = num;
+    int len = 0;
 
-	n = n / 10;
-	num = n;
+    if (num_copy == 0) {
+        write(1, "0", 1);
+        return 1;
+    }
 
-	if (last < 0)
-	{
-		_putchar('-');
-		num = -num;
-		n = -n;
-		last = -last;
-		i++;
-	}
-	if (num > 0)
-	{
-		while (num / 10 != 0)
-		{
-			exp = exp * 10;
-			num = num / 10;
-		}
-		num = n;
-		while (exp > 0)
-		{
-			digit = num / exp;
-			_putchar(digit + '0');
-			num = num - (digit * exp);
-			exp = exp / 10;
-			i++;
-		}
-	}
-	_putchar(last + '0');
+    if (num_copy < 0) {
+        write(1, "-", 1);
+        num_copy = -num_copy;
+        len++;
+    }
 
-	return (i);
+    int divisor = 1;
+    while (num_copy / divisor > 0)
+        divisor *= 10;
+
+    while (divisor > 1) {
+        divisor /= 10;
+        char digit = (num / divisor) + '0';
+        write(1, &digit, 1);
+        num %= divisor;
+        len++;
+    }
+
+    return len + 1;
 }
