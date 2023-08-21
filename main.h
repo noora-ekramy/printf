@@ -5,6 +5,8 @@
 #include <stdio.h>
 #include <stdarg.h>
 #include <unistd.h>
+#include <stdlib.h>
+#include <limits.h>
 
 int _putchar(char c);
 void print_number(int n);
