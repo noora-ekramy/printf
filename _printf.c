@@ -51,7 +51,7 @@ int _printf(const char *format, ...)
 				count += print_percent(void);
 			}
 		}
-		va_end(args);
-		return (++count);
 	}
+	va_end(args);
+	return (++count);
 }
