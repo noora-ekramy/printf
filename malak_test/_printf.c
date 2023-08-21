@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdarg.h>
+#include <stdio.h>
 
 #define buffer 1024
 
@@ -36,7 +37,7 @@ int _printf(const char *format, ...)
 			else if (format[i] == 'b')
 				count += print_binary(va_arg(args, int));
 			else if (format[i] == 'u')
-				count += print_unsigned(va_arg(args, int));
+				count += print_unsigned(va_arg(args, unsigned int));
 			else if (format[i] == 'o')
 				count += print_octal(va_arg(args, int));
 			else if (format[i] == 'x')

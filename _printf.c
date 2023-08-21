@@ -1,58 +1,57 @@
 #include "main.h"
+#include <stdarg.h>
+#include <stdio.h>
+
+#define buffer 1024
 
 /**
- * _printf - prints the input according to a format
- * @format: the formating string
+ * _printf - print any thing
  *
- * Return: number of printed chars
- */
+ * @format: the string to print
+ *
+ * Return: number of printed char
+*/
+
+
 int _printf(const char *format, ...)
 {
-	int printed_chars = 0;
 	va_list args;
-	
+	int count = 0, i = 0;
+
 	va_start(args, format);
-	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
+	if (format == NULL)
+		format = "";
+	for (; format[i] != 0; i++)
 	{
-		return (-1);
-	}
-	while (*format)
-	{
-		if (*format == '%')
+		if (format[i] == '%')
 		{
-		format++;
-		switch (*format)
-		{
-			case 'c':
-				printed_chars += print_char(args);
-				break;
-			case 's':
-				printed_chars += print_string(args);
-				break;
-                        case 'i':
-                                printed_chars += print_int(args);
-                                break;
-                        case 'd':
-                                printed_chars += print_int(args);
-                                break;
-			case '%':
-				write(1, "%", 1);
-				printed_chars++;
-				break;
-			default:
-				write(1, "%", 1);
-				write(1, format, 1);
-				printed_chars += 2;
-				break;
+			i++;
+			if (format[i] == 'c')
+				count += print_char(va_arg(args, char));
+			else if (format[i] == 's')
+				count += print_string(va_arg(args, char *));
+			else if (format[i] == '%')
+				count += print_percent();
+			else if (format[i] == 'i' || format[i] == 'd')
+				count += print_int(va_arg(args, int));
+			else if (format[i] == 'b')
+				count += print_binary(va_arg(args, int));
+			else if (format[i] == 'u')
+				count += print_unsigned(va_arg(args, unsigned int));
+			else if (format[i] == 'o')
+				count += print_octal(va_arg(args, int));
+			else if (format[i] == 'x')
+				count += print_hex(va_arg(args, int));
+			else if (format[i] == 'X')
+				count += print_capital_hex(va_arg(args, int));
+
+			else
+			{
+				i--;
+				count += print_percent();
+			}
 		}
-		}
-		else
-		{
-			write(1, format, 1);
-			printed_chars++;
-		}
-		format++;
 	}
 	va_end(args);
-	return (printed_chars);
+	return (count);
 }
