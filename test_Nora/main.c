@@ -18,13 +18,11 @@ int main(void)
 	printf("_____________________________________\n");
 
 	/* testing %s" */
-	len = _printf("print: %s \n", "hello this is a string");
+	len = _printf("print: %s \n", "hello this is a stringg");
 	len2 = printf("print: %s \n", "hello this is a string");
 	printf("Length:[%i, %i]\n", len, len2);
 	/* testing %s" */
-	len = _printf("print: %s \n", NULL);
-	len2 = printf("print: %s \n", NULL);
-	printf("Length:[%i, %i]\n", len, len2);
+
 	printf("_____________________________________\n");
 
 

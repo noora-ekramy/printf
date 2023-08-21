@@ -1,52 +1,35 @@
 #include "main.h"
-#include <stdarg.h>
-#include <stdlib.h>
-#include <stdio.h>
-#include <limits.h>
-#include <unistd.h>
-
 
 /**
- * _printf - print any thing
+ * _printf - prints the input according to a format
+ * @format: the formating string
  *
- * @format: the string to print
- *
- * Return: number of printed char
-*/
-
-
+ * Return: number of printed chars
+ */
 int _printf(const char *format, ...)
 {
+	int printed_chars = 0;
 	va_list args;
-	unsigned int count = 0, i = 0;
-
+	
 	va_start(args, format);
-	if (format == NULL)
-		return ();
-	for (; format[i] != 0; i++)
+	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 	{
-		if (format[i] == '%')
+		return (-1);
+	}
+	while (*format)
+	{
+		if (*format == '%')
 		{
-			i++;
-			if (format[i] == 'c')
-				count += print_char(va_arg(args));
-			else if (format[i] == 's')
-				count += print_string(va_arg(args));
-			else if (format[i] == '%')
-				count += print_percent();
-
-			else
-			{
-				i--;
-				count += print_percent();
-			}
+		format++;
+			printed_chars += matching_format(format , args);
 		}
 		else
 		{
-			_putchar(format[i]);
-			count++;
+			write(1, format, 1);
+			printed_chars++;
 		}
+		format++;
 	}
 	va_end(args);
-	return (count);
+	return (printed_chars);
 }
