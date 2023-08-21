@@ -1,4 +1,5 @@
 #include "main.h"
+#include "print_number.c"
 
 /**
  * print_number - print a givin number

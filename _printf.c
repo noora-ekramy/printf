@@ -1,6 +1,13 @@
 #include "main.h"
 #include <stdarg.h>
 #include <stdio.h>
+#include "print_char.c"
+#include "print_string.c"
+#include "print_percent.c"
+#include "print_int.c"
+#include "print_binary.c"
+#include "print_unsigned.c"
+#include "_putchar.c"
 
 //#define buffer 1024
 
