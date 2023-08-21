@@ -29,9 +29,9 @@ int _printf(const char *format, ...)
 		{
 			i++;
 			if (format[i] == 'c')
-				count += print_char(va_arg(args, int));
+				count += print_char(va_arg(args));
 			else if (format[i] == 's')
-				count += print_string(va_arg(args, char *));
+				count += print_string(va_arg(args));
 			else if (format[i] == '%')
 				count += print_percent();
 
