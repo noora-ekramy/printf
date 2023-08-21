@@ -10,12 +10,12 @@
 
 int print_binary(int i)
 {
-	int count = 0, binary, tens = 1;
+	int count = 0, binary = 0, tens = 1;
 
 	while (i > 0)
 	{
 		binary += (i % 2) * tens;
-		num /= 2;
+		i /= 2;
 		tens *= 10;
 		count++;
 	}

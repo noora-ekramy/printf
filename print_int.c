@@ -16,7 +16,7 @@ int print_int(int i)
 	while (i > 0)
 	{
 		count++;
-		num /= 10;
+		i /= 10;
 	}
 	return (count);
 }
