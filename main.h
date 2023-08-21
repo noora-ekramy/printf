@@ -21,5 +21,4 @@ int print_unsigned(unsigned int i);
 int print_octal(int i);
 int print_hex(int i);
 int print_capital_hex(int i);
-
 #endif
