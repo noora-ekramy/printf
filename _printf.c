@@ -11,7 +11,7 @@ int _printf(const char *format, ...)
 	int printed_chars = 0;
 	va_list args;
 
-	specifier_match = {
+	specifier_match sm[] = {
 		{"%s", print_string}, {"%c", print_char},
 		{"%%", print_percentage}, {"%i", print_int},
 		{"%d", printf_int}
