@@ -5,23 +5,23 @@
  * @args: argument
  * Return: the printed_len
  */
-int matching_format(const char *format , va_list args)
+int matching_format(const char *format, va_list args)
 {
-	if(*format == 'c')
-		return print_char(args);
-	else if(*format == 's')
-		return print_string(args);
-	else if(*format == 'i' || *format == 'd')
-		return print_int(args);
-	else if(*format == '%')
+	if (*format == 'c')
+		return (print_char(args));
+	else if (*format == 's')
+		return (print_string(args));
+	else if (*format == 'i' || *format == 'd')
+		return (print_int(args));
+	else if (*format == '%')
 	{
 		_putchar('%');
 		return (1);
 	}
-	else 
+	else
 	{
 		_putchar('%');
 		_putchar(*format);
-		return(2);
+		return (2);
 	}
 }
