@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdarg.h>
+#include <stdlib.h>
 #include <stdio.h>
 #include "print_char.c"
 #include "print_string.c"
@@ -62,7 +63,8 @@ int _printf(const char *format, ...)
 		}
 		else
 		{
-			count += _putchar(format[i]);
+			_putchar(format[i]);
+			count++;
 		}
 	}
 	va_end(args);
