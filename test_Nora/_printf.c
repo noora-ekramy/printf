@@ -11,6 +11,12 @@ int _printf(const char *format, ...)
 	int printed_chars = 0;
 	va_list args;
 
+	specifier_match = {
+		{"%s", print_string}, {"%c", print_char},
+		{"%%", print_percentage}, {"%i", print_int},
+		{"%d", printf_int}
+		};
+	
 	va_start(args, format);
 	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 	{
@@ -30,6 +36,9 @@ int _printf(const char *format, ...)
 				printed_chars += print_string(args);
 				break;
                         case 'i':
+                                printed_chars += print_int(args);
+                                break;
+                        case 'd':
                                 printed_chars += print_int(args);
                                 break;
 			case '%':
