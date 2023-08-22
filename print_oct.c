@@ -4,7 +4,6 @@
  ** @arg: the intger
  * Return: number of digits
  *
-
 */
 int print_oct(va_list arg)
 {
@@ -12,7 +11,7 @@ int print_oct(va_list arg)
 	int count = 0, division, iterate = 0;
 	char hex[14];
 
-	if( i== 0)
+	if (i == 0)
 	{
 		_putchar('0');
 		return (1);

@@ -5,7 +5,6 @@
  ** @arg: the intger
  * Return: number of digits
  *
-
 */
 
 int print_hex(va_list arg)
@@ -13,7 +12,7 @@ int print_hex(va_list arg)
 	unsigned int i = va_arg(arg, unsigned int);
 	int count = 0, division, iterate = 0;
 	char hex[10];
-	
+
 	if (i == 0)
 	{
 		_putchar('0');
@@ -44,7 +43,6 @@ int print_hex(va_list arg)
  ** @arg: the intger
  * Return: number of digits
  *
-
 */
 
 int print_Hex(va_list arg)

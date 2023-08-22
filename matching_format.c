@@ -16,12 +16,12 @@ int matching_format(const char *format, va_list args)
 	else if (*format == 'b')
 		return (print_ui_to_bin(args));
 	else if (*format == 'u')
-		return print_uint(args);
+		return (print_uint(args));
 	else if (*format == 'o')
-		return print_oct(args);
-	else if(*format == 'x')
+		return (print_oct(args));
+	else if (*format == 'x')
 		return (print_hex(args));
-	else if(*format == 'X')
+	else if (*format == 'X')
 		return (print_Hex(args));
 	else if (*format == '%')
 	{

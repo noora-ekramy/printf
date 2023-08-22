@@ -7,8 +7,9 @@
 int print_uint(va_list arg)
 {
 	unsigned int i = va_arg(arg, unsigned int);
-	
+
 	int count = 0;
+
 	if (i == 0)
 	{
 		_putchar('0');
