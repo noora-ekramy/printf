@@ -44,19 +44,3 @@ int print_int(va_list arg)
 	_putchar(last + '0');
 	return (i);
 }
-/**
- * print_number - prints integer
- * @num: number
- * @len: integer length
- * Return: nothing
- */
-int print_number(int num, int len)
-{
-	if (num <= 0)
-	{
-		return (len);
-	}
-	len = print_number(num / 10, len + 1);
-	_putchar('0' + (num % 10));
-	return (len);
-}
