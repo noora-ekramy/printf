@@ -16,7 +16,7 @@ int print_oct(va_list arg)
 
 	if( i== 0)
 	{
-		_putchar(0);
+		_putchar('0');
 		return (1);
 	}
 	while (i > 0)
