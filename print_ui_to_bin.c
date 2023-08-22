@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * Print_ui_to_bin - prints unsigned integer to binary
+ * print_ui_to_bin - prints unsigned integer to binary
  * @arg: integer
  * Return: printed len
  */
@@ -12,6 +12,11 @@ int print_ui_to_bin(va_list arg)
 	return printBinary(num);;
 }
 
+/**
+ * printBinary - prints unsigned integer to binary
+ * @num: integer
+ * Return: printed len
+ */
 int printBinary(unsigned int num)
 {
 	int printed_chars=0;
@@ -20,8 +25,8 @@ int printBinary(unsigned int num)
 	{
 		 printed_chars += printBinary(num / 2);
 	}
-	printf("%d", num % 2);
+	_putchar((num % 2) + '0');
 	printed_chars++;
 
-    return printed_chars;
+    return (printed_chars);
 }
