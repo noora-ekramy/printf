@@ -24,4 +24,5 @@ int print_hex(va_list arg);
 int print_Hex(va_list arg);
 int print_String(va_list args);
 void print_unsigned_number(unsigned int n);
+int print_hexadecimal(unsigned int i);
 #endif

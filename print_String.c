@@ -20,7 +20,7 @@ int print_String(va_list args)
 		{
 			_putchar('\\');
 			_putchar('x');
-			count += print_Hex(str[itr]);
+			count += print_hexadecimal(str[itr]);
 			count += 2;
 		}
 		else
@@ -29,4 +29,5 @@ int print_String(va_list args)
 			count++;
 		}
 	}
+	return (count);
 }
