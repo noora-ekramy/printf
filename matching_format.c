@@ -23,6 +23,8 @@ int matching_format(const char *format, va_list args)
 		return (print_hex(args));
 	else if (*format == 'X')
 		return (print_Hex(args));
+	else if (*format == 'S')
+		return (print_String(args));
 	else if (*format == '%')
 	{
 		_putchar('%');
