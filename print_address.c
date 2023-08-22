@@ -11,7 +11,9 @@
 int print_address(uintptr_t i)
 {
 	int count = 0, iterate;
-	long unsigned int j;
+
+	unsigned int long j;
+
 	char hex[10];
 
 	if (i == 0)
@@ -24,6 +26,7 @@ int print_address(uintptr_t i)
 	while (i > 0)
 	{
 	int division = i % 16;
+
 	if (division < 10)
 		hex[iterate] = '0' + division;
 	else
