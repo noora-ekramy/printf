@@ -11,7 +11,6 @@
 int _printf(const char *format, ...);
 int print_char(va_list arg);
 int print_string(va_list arg);
-int print_number(int num, int len);
 int print_int(va_list arg);
 int _putchar(char c);
 int matching_format(const char *format, va_list args);
