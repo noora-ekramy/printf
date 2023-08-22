@@ -1,3 +1,4 @@
+#include "main.h"
 /**
  * print_oct - print an intger in hexadicimel
  ** @arg: the intger
