@@ -1,32 +1,35 @@
-#include "main.h"
-
 /**
- * print_oct - prints unsigned integer to octal
- * @arg: integer
- * Return: printed len
- */
+ * print_oct - print an intger in hexadicimel
+ ** @arg: the intger
+ * Return: number of digits
+ *
+
+*/
 int print_oct(va_list arg)
 {
-	unsigned int num = va_arg(arg, unsigned int);
+	unsigned int i = va_arg(arg, unsigned int);
+	int count = 0, division, iterate = 0;
+	char hex[14];
 
-	return (printOctal(num));
-}
-
-/**
- * printOctal - prints unsigned integer to binary
- * @num: integer
- * Return: printed len
- */
-int printOctal(unsigned int num)
-{
-	int printed_chars = 0;
-
-	if (num > 1)
+	if( i== 0)
 	{
-		printed_chars += printOctal(num / 8);
+		_putchar('0');
+		return (1);
 	}
-	_putchar((num % 8) + '0');
-	printed_chars++;
+	while (i > 0)
+	{
+		division = i % 8;
 
-	return (printed_chars);
+			hex[iterate] = '0' + division;
+		i /= 8;
+		count++;
+		iterate++;
+	}
+	iterate--;
+	while (iterate >= 0)
+	{
+		_putchar(hex[iterate]);
+		iterate--;
+	}
+	return (count);
 }
