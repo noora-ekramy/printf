@@ -6,25 +6,34 @@
  */
 int print_uint(va_list arg)
 {
-	unsigned int n = va_arg(arg, unsigned int);
-
-	return (print_number(n));
+	unsigned int i = va_arg(arg, unsigned int);
+	
+	int count = 0;
+	if (i == 0)
+	{
+		_putchar('0');
+		return (1);
+	}
+	print_unsigned_number(i);
+	while (i > 0)
+	{
+		count++;
+		i /= 10;
+	}
+	return (count);
 }
 /**
- * print_number - prints integer
- * @num: number
- * Return: nothing
- */
-int print_number(unsigned int num)
+ * print_unsigned_number - print positive number
+ * Return: void
+ * @n: the number to print
+*/
+void print_unsigned_number(unsigned int n)
 {
-	int printed_chars = 0;
+	unsigned int num = n;
 
-	if (num > 1)
+	if (num >= 10)
 	{
-		printed_chars += print_number(num / 10);
+		print_unsigned_number(num / 10);
 	}
-	_putchar((num % 10) + '0');
-	printed_chars++;
-
-	return (printed_chars);
+	_putchar('0' + num % 10);
 }
