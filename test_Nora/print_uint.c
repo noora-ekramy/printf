@@ -7,8 +7,6 @@
 int print_uint(va_list arg)
 {
 	unsigned int n = va_arg(arg, unsigned int);
-	if (n < 0)
-		n=-n;
 	return (print_number(n));
 }
 /**
