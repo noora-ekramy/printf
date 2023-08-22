@@ -12,7 +12,6 @@ int print_uint(va_list arg)
 /**
  * print_number - prints integer
  * @num: number
- * @len: integer length
  * Return: nothing
  */
 int print_number(unsigned int num )
