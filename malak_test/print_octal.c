@@ -1,24 +1,41 @@
 #include "main.h"
 
+
 /**
- * print_octal - print an intger in octal
- *
+ * print_oct - print an intger in hexadicimel
+ ** @arg: the intger
  * Return: number of digits
  *
- * @i: the intger
+
 */
-
-int print_octal(int i)
+int print_oct(va_list arg)
 {
-	int octal = 0, tens = 1, count = 0;
+	unsigned int i = va_arg(arg, unsigned int);
+	int count = 0, division, iterate = 0;
+	char hex[14];
 
+	if( i== 0)
+	{
+		_putchar('0');
+		return (1);
+	}
 	while (i > 0)
 	{
-		octal += (i % 10) * tens;
+		division = i % 8;
+
+			hex[iterate] = '0' + division;
 		i /= 8;
-		tens *= 10;
 		count++;
+		iterate++;
 	}
-	print_number(octal);
+	iterate--;
+	while (iterate >= 0)
+	{
+		_putchar(hex[iterate]);
+		iterate--;
+	}
 	return (count);
 }
+
+
+

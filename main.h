@@ -20,5 +20,7 @@ int print_uint(va_list arg);
 int print_number(unsigned int num);
 int printOctal(unsigned int num);
 int print_oct(va_list arg);
-
+int print_hex(va_list arg);
+int print_Hex(va_list arg);
+void print_unsigned_number(unsigned int n);
 #endif
