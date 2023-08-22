@@ -5,31 +5,27 @@
  * @arg: integer
  * Return: printed len
  */
-int print_oct(va_list val)
+int print_oct(va_list arg)
 {
-	int i;
-	int *array;
-	int counter = 0;
-	unsigned int num = va_arg(val, unsigned int);
-	unsigned int temp = num;
+	unsigned int num = va_arg(arg, unsigned int);
+	return printOctal(num);
+}
 
-	while (num / 8 != 0)
-	{
-		num /= 8;
-		counter++;
-	}
-	counter++;
-	array = malloc(counter * sizeof(int));
+/**
+ * printOctal - prints unsigned integer to binary
+ * @num: integer
+ * Return: printed len
+ */
+int printOctal(unsigned int num)
+{
+	int printed_chars=0;
 
-	for (i = 0; i < counter; i++)
+	if (num > 1)
 	{
-		array[i] = temp % 8;
-		temp /= 8;
+		 printed_chars += printOctal(num / 8);
 	}
-	for (i = counter - 1; i >= 0; i--)
-	{
-		_putchar(array[i] + '0');
-	}
-	free(array);
-	return (counter);
+	_putchar((num % 8) + '0');
+	printed_chars++;
+
+    return (printed_chars);
 }
