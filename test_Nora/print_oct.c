@@ -8,21 +8,21 @@
 int print_oct(va_list arg)
 {
 	unsigned int num = va_arg(arg, unsigned int);
-	return printOctal(num);;
+	return printOctal(num);
 }
 
 /**
- * printBinary - prints unsigned integer to binary
+ * printOctal - prints unsigned integer to binary
  * @num: integer
  * Return: printed len
  */
-int printBinary(unsigned int num)
+int printOctal(unsigned int num)
 {
 	int printed_chars=0;
 
 	if (num > 1)
 	{
-		 printed_chars += printBinary(num / 8);
+		 printed_chars += printOctal(num / 8);
 	}
 	_putchar((num % 8) + '0');
 	printed_chars++;
