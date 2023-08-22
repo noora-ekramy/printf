@@ -1,5 +1,7 @@
 #include "main.h"
 
+int print_two_hexadecimal(unsigned int i);
+
 /**
  * print_String - print string without some chars
  *
