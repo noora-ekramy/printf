@@ -14,11 +14,6 @@ int print_hex(va_list arg)
 	int count = 0, division, iterate = 0;
 	char hex[10];
 
-	if (i == 0)
-	{
-		_putchar('0');
-		return (1);
-	}
 	while (i > 0)
 	{
 		division = i % 16;
@@ -53,11 +48,7 @@ int print_Hex(va_list arg)
 	int count = 0, division, iterate = 0;
 	char hex[10];
 
-	if (i == 0)
-	{
-		_putchar('0');
-		return (1);
-	}	
+
 	while (i > 0)
 	{
 		division = i % 16;
