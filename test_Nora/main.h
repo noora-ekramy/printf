@@ -17,4 +17,6 @@ int _putchar(char c);
 int matching_format(const char *format, va_list args);
 int print_ui_to_bin(va_list arg);
 int printBinary(unsigned int num);
+int print_uint(va_list arg);
+int print_number(unsigned int num);
 #endif
