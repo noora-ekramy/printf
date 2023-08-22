@@ -8,7 +8,8 @@
 int print_oct(va_list arg)
 {
 	unsigned int num = va_arg(arg, unsigned int);
-	return printOctal(num);
+
+	return (printOctal(num));
 }
 
 /**
@@ -18,14 +19,14 @@ int print_oct(va_list arg)
  */
 int printOctal(unsigned int num)
 {
-	int printed_chars=0;
+	int printed_chars = 0;
 
 	if (num > 1)
 	{
-		 printed_chars += printOctal(num / 8);
+		printed_chars += printOctal(num / 8);
 	}
 	_putchar((num % 8) + '0');
 	printed_chars++;
 
-    return (printed_chars);
+	return (printed_chars);
 }

@@ -16,9 +16,9 @@ int matching_format(const char *format, va_list args)
 	else if (*format == 'b')
 		return (print_ui_to_bin(args));
 	else if (*format == 'u')
-		return print_uint(args);
+		return (print_uint(args));
 	else if (*format == 'o')
-		return print_oct(args);
+		return (print_oct(args));
 	else if (*format == '%')
 	{
 		_putchar('%');

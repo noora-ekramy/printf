@@ -9,7 +9,7 @@ int print_ui_to_bin(va_list arg)
 {
 	unsigned int num = va_arg(arg, unsigned int);
 
-	return printBinary(num);;
+	return (printBinary(num));
 }
 
 /**
@@ -19,14 +19,14 @@ int print_ui_to_bin(va_list arg)
  */
 int printBinary(unsigned int num)
 {
-	int printed_chars=0;
+	int printed_chars = 0;
 
 	if (num > 1)
 	{
-		 printed_chars += printBinary(num / 2);
+		printed_chars += printBinary(num / 2);
 	}
 	_putchar((num % 2) + '0');
 	printed_chars++;
 
-    return (printed_chars);
+	return (printed_chars);
 }
