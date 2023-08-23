@@ -14,7 +14,7 @@ int print_address(uintptr_t i)
 
 	unsigned int long j;
 
-	char hex[10];
+	char hex[50];
 
 	if (i == 0)
 	{
