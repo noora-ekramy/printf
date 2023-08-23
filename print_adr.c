@@ -13,6 +13,16 @@ int print_adr(va_list arg)
 	void *ptr = va_arg(arg, void *);
 	uintptr_t address = (uintptr_t)ptr;
 
+	if (address == NULL)
+	{
+		_putchar('(');
+		_putchar('n');
+		_putchar('i');
+		_putchar('l');
+		_putchar(')');
+		return (5);
+	}
+
 	_putchar('0');
 	_putchar('x');
 	count += 2 + print_address(address);
