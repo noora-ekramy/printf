@@ -3,7 +3,7 @@
 /**
  * print_adr - print an address of var
  * @arg: the intger
- * Return: number of digits some things 
+ * Return: number of digits some things
  *
 */
 
