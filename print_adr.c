@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * print_adr - print an address of var
+ * print_adr - print an address of variable
  * @arg: the intger
  * Return: number of digits
  *
