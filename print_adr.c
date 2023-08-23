@@ -13,7 +13,7 @@ int print_adr(va_list arg)
 	void *ptr = va_arg(arg, void *);
 	uintptr_t address = (uintptr_t)ptr;
 
-	if (address == NULL)
+	if (ptr == NULL)
 	{
 		_putchar('(');
 		_putchar('n');
