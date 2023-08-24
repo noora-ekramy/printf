@@ -27,5 +27,6 @@ void print_unsigned_number(unsigned int n);
 int print_hexadecimal(unsigned int i);
 int print_address(uintptr_t i);
 int print_adr(va_list arg);
+int print_positive(va_list arg);
 
 #endif
