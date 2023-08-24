@@ -27,7 +27,7 @@ int matching_format(const char *format, va_list args)
 		return (print_String(args));
 	else if (*format == 'p')
 		return (print_adr(args));
-	else if (*format == '+' && (*(++format) == 'd' || *(format) == 'i'))
+	else if (*format == '+' && (*(++format) == 'd' || *(format--) == 'i'))
 		return (print_positive(args));
 	else if (*format == '%')
 	{
