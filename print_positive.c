@@ -13,7 +13,7 @@ int print_positive(va_list arg)
 {
 	int i = va_arg(arg, int), count = 0;
 
-	if (number > 0)
+	if (i > 0)
 	{
 		_putchar('+');
 		count++;
